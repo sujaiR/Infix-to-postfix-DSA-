@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Infix to Postfix Converter</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <section id="home">
+      <header>
+        <h1>Applications of Stack</h1>
+      </header>
+    </section>    
+
+    <section id="converter" class="converter-section">
+      <div class="container">
+        <figure>
+          <figcaption><h2>Infix to Postfix Converter</h2></figcaption>
+        </figure>
+        <article>
+          <fieldset>
+            <legend>Convert Infix to Postfix</legend>
+            <label for="infixExpression">Infix Expression</label> 
+            <input type="text" id="infixExpression" placeholder="Enter infix expression"> 
+            <button type="button" onclick="convertToPostfix()">Convert</button> 
+            <label for="postfixResult">Postfix Expression</label>
+            <input type="text" id="postfixResult" readonly> 
+          </fieldset>
+          <aside>
+            <p>Algorithm to convert infix to postfix:</p>
+            <ol>
+              <li>Scan the infix expression from left to right.</li>
+              <li>If the scanned character is an operand, output it.</li>
+              <li>If the scanned character is an operator and the stack is empty, push it to the stack.</li>
+              <li>If the scanned character is an operator and the stack is not empty, compare its precedence with the operator on top of the stack. If it has higher precedence, push it to the stack; otherwise, pop operators from the stack and add to the output until the stack is empty or an operator with a lower precedence is found.</li>
+              <li>If the scanned character is '(', push it to the stack.</li>
+              <li>If the scanned character is ')', pop from the stack and add to the output until '(' is found.</li>
+              <li>Repeat steps 2-6 until the infix expression is fully scanned.</li>
+              <li>Pop all remaining operators from the stack and add to the output.</li>
+            </ol>
+          </aside>
+        </article>
+      </div>
+    </section>
+
+    <footer>Done by Sujai</footer>
+  </body>
+</html>
